@@ -80,7 +80,7 @@
     if (typeof o === "string") return _arrayLikeToArray(o, minLen);
     var n = Object.prototype.toString.call(o).slice(8, -1);
     if (n === "Object" && o.constructor) n = o.constructor.name;
-    if (n === "Map" || n === "Set") return Array.from(n);
+    if (n === "Map" || n === "Set") return Array.from(o);
     if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
   }
 
@@ -659,7 +659,7 @@
     directives: {
       ObserveVisibility: ObserveVisibility
     },
-    props: _objectSpread2({}, props, {
+    props: _objectSpread2(_objectSpread2({}, props), {}, {
       itemSize: {
         type: Number,
         default: null
@@ -1094,11 +1094,11 @@
           if (start < 0) {
             size += start;
             start = 0;
-          }
+          } // ALEX: Comentado, no se para que vale pero hace que no funcione con las tablas.
+          //if (start + size > boundsSize) {
+          //size = boundsSize - start
+          //}
 
-          if (start + size > boundsSize) {
-            size = boundsSize - start;
-          }
 
           scrollState = {
             start: start,
@@ -1377,7 +1377,7 @@
     
 
     
-    const __vue_component__ = normalizeComponent(
+    const __vue_component__ = /*#__PURE__*/normalizeComponent(
       { render: __vue_render__, staticRenderFns: __vue_staticRenderFns__ },
       __vue_inject_styles__,
       __vue_script__,
@@ -1429,7 +1429,7 @@
         vscrollResizeObserver: this.$_resizeObserver
       };
     },
-    props: _objectSpread2({}, props, {
+    props: _objectSpread2(_objectSpread2({}, props), {}, {
       minItemSize: {
         type: [Number, String],
         required: true
@@ -1653,7 +1653,7 @@
     
 
     
-    const __vue_component__$1 = normalizeComponent(
+    const __vue_component__$1 = /*#__PURE__*/normalizeComponent(
       { render: __vue_render__$1, staticRenderFns: __vue_staticRenderFns__$1 },
       __vue_inject_styles__$1,
       __vue_script__$1,
@@ -1893,7 +1893,7 @@
     
 
     
-    const __vue_component__$2 = normalizeComponent(
+    const __vue_component__$2 = /*#__PURE__*/normalizeComponent(
       {},
       __vue_inject_styles__$2,
       __vue_script__$2,

@@ -513,9 +513,10 @@ export default {
           size += start
           start = 0
         }
-        if (start + size > boundsSize) {
-          size = boundsSize - start
-        }
+	// ALEX: Comentado, no se para que vale pero hace que no funcione con las tablas.
+        //if (start + size > boundsSize) {
+          //size = boundsSize - start
+        //}
         scrollState = {
           start,
           end: start + size,
