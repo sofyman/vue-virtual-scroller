@@ -519,7 +519,9 @@ export default {
         //}
         scrollState = {
           start,
-          end: start + size,
+          //end: start + size,
+	  // ALEX: Cambiado para que vaya mas rapido, igual provoca fallos en otro sitio
+          end: start + boundsSize,
         }
       } else if (isVertical) {
         scrollState = {
