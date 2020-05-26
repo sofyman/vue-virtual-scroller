@@ -619,8 +619,10 @@ var script = {
         var bounds = el.getBoundingClientRect();
         var boundsSize = isVertical ? bounds.height : bounds.width;
         var start = -(isVertical ? bounds.top : bounds.left);
+        var size = isVertical ? window.innerHeight : window.innerWidth;
 
         if (start < 0) {
+          size += start;
           start = 0;
         } // ALEX: Comentado, no se para que vale pero hace que no funcione con las tablas.
         //if (start + size > boundsSize) {
@@ -630,9 +632,7 @@ var script = {
 
         scrollState = {
           start: start,
-          //end: start + size,
-          // ALEX: Cambiado para que vaya mas rapido, igual provoca fallos en otro sitio
-          end: start + boundsSize
+          end: start + size
         };
       } else if (isVertical) {
         scrollState = {
