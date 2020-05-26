@@ -1262,14 +1262,6 @@
     return _c(
       "div",
       {
-        directives: [
-          {
-            name: "observe-visibility",
-            rawName: "v-observe-visibility",
-            value: _vm.handleVisibilityChange,
-            expression: "handleVisibilityChange"
-          }
-        ],
         staticClass: "vue-recycle-scroller",
         class:
           ((_obj = {
@@ -1297,6 +1289,14 @@
         _c(
           "div",
           {
+            directives: [
+              {
+                name: "observe-visibility",
+                rawName: "v-observe-visibility",
+                value: _vm.handleVisibilityChange,
+                expression: "handleVisibilityChange"
+              }
+            ],
             ref: "wrapper",
             staticClass: "vue-recycle-scroller__item-wrapper",
             style:

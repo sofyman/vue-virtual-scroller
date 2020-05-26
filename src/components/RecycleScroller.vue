@@ -1,6 +1,5 @@
 <template>
   <div
-    v-observe-visibility="handleVisibilityChange"
     class="vue-recycle-scroller"
     :class="{
       ready,
@@ -20,6 +19,7 @@
 
     <div
       ref="wrapper"
+      v-observe-visibility="handleVisibilityChange"
       :style="{ [direction === 'vertical' ? 'minHeight' : 'minWidth']: totalSize + 'px' }"
       class="vue-recycle-scroller__item-wrapper"
     >
